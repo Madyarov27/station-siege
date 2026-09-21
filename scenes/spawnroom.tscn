@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cum4q6m55neip"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_e0s0o"]
+vertices = PackedVector3Array(-3.2034519, 2.3270001, -8.179999, -3.2034519, 2.3270001, -2.7799993, 4.1965485, 2.3270001, -2.7799993, 4.1965485, 2.3270001, -8.179999)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+cell_size = 0.1
+cell_height = 0.1
+agent_radius = 0.3
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" unique_id=661124361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045684338, 0.67277455, -0.020254135)
+navigation_mesh = SubResource("NavigationMesh_e0s0o")
+
+[node name="cave" type="CSGBox3D" parent="." unique_id=1714526077]
+transform = Transform3D(0.35836798, 0, 0.9335804, 0, 1, 0, -0.9335804, 0, 0.35836798, -3, 0.327, -6)
+use_collision = true
+size = Vector3(4, 3, 0.4)
+
+[node name="cave2" type="CSGBox3D" parent="." unique_id=956815607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045684338, 0.32722545, -7.979746)
+use_collision = true
+size = Vector3(5, 3, 0.4)
+
+[node name="cave3" type="CSGBox3D" parent="." unique_id=1144682318]
+transform = Transform3D(-0.39714786, 0, 0.91775465, 0, 1, 0, -0.91775465, 0, -0.39714786, 3.1, 0.327, -6.2)
+use_collision = true
+size = Vector3(4, 3, 0.4)
+
+[node name="cave4" type="CSGBox3D" parent="." unique_id=342746275]
+transform = Transform3D(-0.7986355, 0, 0.6018151, 0, 1, 0, -0.6018151, 0, -0.7986355, -2.3838377, 0.32700002, -3.4735637)
+use_collision = true
+size = Vector3(2.6, 3, 0.4)
+
+[node name="cave5" type="CSGBox3D" parent="." unique_id=895384543]
+transform = Transform3D(0.7771459, 0, 0.6293204, 0, 1, 0, -0.6293204, 0, 0.7771459, 2.7715786, 0.32700002, -3.5880737)
+use_collision = true
+size = Vector3(3, 3, 0.4)
+
+[node name="cave6" type="CSGBox3D" parent="." unique_id=600495465]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.546, 2, -5.48)
+use_collision = true
+size = Vector3(8, 6, 0.4)

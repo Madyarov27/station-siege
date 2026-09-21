@@ -1,0 +1,43 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://c2lfn7ofgp1eq"
+path="res://.godot/imported/rusty+wall+vent+3d+model (1)_tripo_node_7efba032-dfb1-4b18-b371-fa73351bf041_Normal_Bake.jpg-8cecb95a5d81545c6a76babf9074998d.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "f065a21cc22f268ed9956c8c9f30f762"
+}
+
+[deps]
+
+source_file="res://scenes/rusty+wall+vent+3d+model (1)_tripo_node_7efba032-dfb1-4b18-b371-fa73351bf041_Normal_Bake.jpg"
+dest_files=["res://.godot/imported/rusty+wall+vent+3d+model (1)_tripo_node_7efba032-dfb1-4b18-b371-fa73351bf041_Normal_Bake.jpg-8cecb95a5d81545c6a76babf9074998d.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://scenes/damaged+bulkhead+door+3d+model (2)_damaged_bulkhead_door_3d_model_tripo_part_4_normal.jpg"
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

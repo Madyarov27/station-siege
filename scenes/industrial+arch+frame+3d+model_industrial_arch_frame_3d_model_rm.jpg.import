@@ -1,0 +1,43 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dcvr6ffsfrv0l"
+path="res://.godot/imported/industrial+arch+frame+3d+model_industrial_arch_frame_3d_model_rm.jpg-a867c560660106d168dc0dc8ad102737.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "2a34425d5c45a1510ecd2c1c5c55ce12"
+}
+
+[deps]
+
+source_file="res://scenes/industrial+arch+frame+3d+model_industrial_arch_frame_3d_model_rm.jpg"
+dest_files=["res://.godot/imported/industrial+arch+frame+3d+model_industrial_arch_frame_3d_model_rm.jpg-a867c560660106d168dc0dc8ad102737.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://scenes/damaged+bulkhead+door+3d+model (2)_damaged_bulkhead_door_3d_model_tripo_part_4_normal.jpg"
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

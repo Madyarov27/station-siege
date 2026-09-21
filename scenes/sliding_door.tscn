@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://beyw4gifkbe7f"]
+
+[ext_resource type="PackedScene" uid="uid://gxeicfre3m3m" path="res://scenes/industrial+sci-fi+panel+3d+model.glb" id="1_vjn6n"]
+[ext_resource type="Script" uid="uid://bibggylu36p1e" path="res://scripts/door_slide.gd" id="2_06hqn"]
+[ext_resource type="PackedScene" uid="uid://bwrtog4obovx1" path="res://scenes/sci-fi+industrial+door+3d+model.glb" id="2_ivgr4"]
+[ext_resource type="AudioStream" uid="uid://cv3ecf7a3yp3f" path="res://scenes/door_sound.mp3" id="3_06hqn"]
+[ext_resource type="PackedScene" uid="uid://cbpy7267wfha3" path="res://scenes/rusty+metal+frame+3d+model.glb" id="3_v0ty3"]
+[ext_resource type="AudioStream" uid="uid://b34ob5bmrpcg6" path="res://scenes/door_sound (mp3cut.net).mp3" id="4_06hqn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_06hqn"]
+size = Vector3(0.06298828, 1.0603027, 0.22991943)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ldlyj"]
+size = Vector3(0.084350586, 1.0783691, 0.55163574)
+
+[node name="door" type="Node3D" unique_id=1112885470]
+
+[node name="right_door" parent="." unique_id=1485980164 instance=ExtResource("1_vjn6n")]
+transform = Transform3D(-5.2453663e-07, 0, -0.35, 0, 2.061, 0, 12, 0, -1.5298985e-08, -0.18063828, -0.90628237, -0.332033)
+script = ExtResource("2_06hqn")
+open_offset = Vector3(0, 0, -1)
+open_sound = ExtResource("3_06hqn")
+close_sound = ExtResource("4_06hqn")
+
+[node name="tripo_node_85cd6b5f-58cd-4546-a8c2-739ae1565fa1" parent="right_door" index="0" unique_id=935753749]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 1.5446916e-05, 0, 0.019535482)
+
+[node name="DoorSound" type="AudioStreamPlayer3D" parent="right_door" unique_id=1246770614]
+stream = ExtResource("4_06hqn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="right_door" unique_id=1370900558]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1.7782834, 0, 0.4588977, 0.016695619)
+collision_layer = 512
+collision_mask = 512
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="right_door/StaticBody3D" unique_id=285418994]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, -2.2737368e-13, 0, 1, -0.0053541847, 0.04960886, -0.0215787)
+shape = SubResource("BoxShape3D_06hqn")
+
+[node name="left_door" parent="." unique_id=123493395 instance=ExtResource("2_ivgr4")]
+transform = Transform3D(-4.371139e-07, 0, -0.4, 0, 2.06, 0, 10, 0, -1.7484556e-08, -0.16571712, -0.910521, 0.26735473)
+script = ExtResource("2_06hqn")
+open_offset = Vector3(0, 0, 1)
+open_sound = ExtResource("3_06hqn")
+close_sound = ExtResource("4_06hqn")
+
+[node name="tripo_node_82e63a5c-994a-40db-a207-5137b4851dd8" parent="left_door" index="0" unique_id=1690484110]
+transform = Transform3D(1, 0, -6.661338e-16, 0, 1, 0, 0, 0, 1.0000001, 0.0011877082, 0, 0.051597893)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="left_door" unique_id=1018861769]
+transform = Transform3D(1, 0, -1.110223e-16, 0, 1, 0, 0, 0, 1.0000001, 0, 0.43599492, 0)
+collision_layer = 512
+collision_mask = 512
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="left_door/StaticBody3D" unique_id=872304733]
+transform = Transform3D(1, 0, -4.440892e-16, 0, 1.0000006, 0, 1.1368684e-13, 0, 1.0000001, 0.010428499, 0.06730103, -0.017755568)
+shape = SubResource("BoxShape3D_ldlyj")
+
+[node name="frame" parent="." unique_id=1347250675 instance=ExtResource("3_v0ty3")]
+transform = Transform3D(-1.0053619e-07, 0, 2.3, 0, 2.3, 0, -2.3, 0, -1.0053619e-07, -0.15854836, -1.030447, 0.007905722)
+
+[editable path="right_door"]
+[editable path="left_door"]

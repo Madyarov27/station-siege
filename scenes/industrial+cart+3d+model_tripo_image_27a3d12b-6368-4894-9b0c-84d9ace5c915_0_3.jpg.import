@@ -1,0 +1,43 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bc6g7yhkhsvcv"
+path="res://.godot/imported/industrial+cart+3d+model_tripo_image_27a3d12b-6368-4894-9b0c-84d9ace5c915_0_3.jpg-3eb5f94af92836f0d155a0c271260914.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "29ca5e052bbb5d7ae2a9035d833a9c01"
+}
+
+[deps]
+
+source_file="res://scenes/industrial+cart+3d+model_tripo_image_27a3d12b-6368-4894-9b0c-84d9ace5c915_0_3.jpg"
+dest_files=["res://.godot/imported/industrial+cart+3d+model_tripo_image_27a3d12b-6368-4894-9b0c-84d9ace5c915_0_3.jpg-3eb5f94af92836f0d155a0c271260914.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://scenes/damaged+bulkhead+door+3d+model (2)_damaged_bulkhead_door_3d_model_tripo_part_4_normal.jpg"
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

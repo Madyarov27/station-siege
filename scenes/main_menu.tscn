@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ciun4klr5wypt"]
+
+[ext_resource type="Script" uid="uid://drxs6ceqchv7r" path="res://scenes/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://38bj3wirs1ka" path="res://scenes/Caveat-VariableFont_wght.ttf" id="2_ekxnf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h0k7y"]
+font = ExtResource("2_ekxnf")
+font_size = 50
+
+[node name="Control" type="Control" unique_id=1776794077]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="Background" type="ColorRect" parent="." unique_id=670559747]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(33.643894, 18.680002)
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="." unique_id=848481336]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 122.0
+offset_right = 474.0
+offset_bottom = 185.0
+text = "Station Siege"
+label_settings = SubResource("LabelSettings_h0k7y")
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="." unique_id=1543018904]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 258.0
+offset_right = 306.0
+offset_bottom = 324.0
+
+[node name="StartButton" type="Button" parent="ButtonsContainer" unique_id=142015376]
+layout_mode = 2
+text = "Start
+"
+
+[node name="QuitButton" type="Button" parent="ButtonsContainer" unique_id=1724729858]
+layout_mode = 2
+text = "Quit
+"

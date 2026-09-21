@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cglfxppacsxky"]
+
+[ext_resource type="Script" uid="uid://8rxgjfuadu4u" path="res://scenes/boards_up.gd" id="1_k4dkl"]
+[ext_resource type="Texture2D" uid="uid://d346ictuqmoo0" path="res://scenes/Poliigon_MetalRust_7642_BaseColor.jpg" id="2_wwsqi"]
+[ext_resource type="AudioStream" uid="uid://dnf4y33kpaags" path="res://addons/ribhavagrawal-metal-beaten-sfx-230501.mp3" id="3_pt713"]
+[ext_resource type="AudioStream" uid="uid://cmp56x7wh1dt4" path="res://scenes/barricade_break_1s.mp3" id="4_e2ml3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oqwcg"]
+albedo_texture = ExtResource("2_wwsqi")
+uv1_triplanar = true
+
+[node name="barricade" type="Node3D" unique_id=1214983301]
+script = ExtResource("1_k4dkl")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1495036964]
+transform = Transform3D(0.11022154, 0.99390715, 0, -0.99390715, 0.11022154, 0, 0, 0, 1, 0.2356777, 0.075322375, -0.004635006)
+use_collision = true
+collision_layer = 8
+collision_mask = 8
+size = Vector3(2.3930073, 0.062401295, 0.086364746)
+material = SubResource("StandardMaterial3D_oqwcg")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=2020062845]
+transform = Transform3D(0.9726161, 0.23241778, 0, -0.23241778, 0.9726161, 0, 0, 0, 1, -0.03961725, -0.24143149, -0.035047114)
+use_collision = true
+collision_layer = 8
+collision_mask = 8
+size = Vector3(1.8167565, 0.06731415, 0.05555725)
+material = SubResource("StandardMaterial3D_oqwcg")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=636974424]
+transform = Transform3D(0.9570137, 0.2900423, 0, -0.2900423, 0.9570137, 0, 0, 0, 1, -0.054136045, 0.6326506, -0.008637428)
+use_collision = true
+collision_layer = 8
+collision_mask = 8
+size = Vector3(1.8664551, 0.047546387, 0.045959473)
+material = SubResource("StandardMaterial3D_oqwcg")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=680706111]
+transform = Transform3D(-0.16056941, 0.9870246, 0, -0.9870246, -0.16056941, 0, 0, 0, 1, -0.20304933, 0.06990516, -0.034814835)
+use_collision = true
+collision_layer = 8
+collision_mask = 8
+size = Vector3(2.407629, 0.050720215, 0.05231476)
+material = SubResource("StandardMaterial3D_oqwcg")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=96624595]
+transform = Transform3D(0.99842024, -0.056187373, 0, 0.056187373, 0.99842024, 0, 0, 0, 1, -0.0541778, 0.18522783, -0.03470564)
+layers = 8
+use_collision = true
+collision_layer = 8
+collision_mask = 8
+size = Vector3(1.7813993, 0.056137085, 0.04550171)
+material = SubResource("StandardMaterial3D_oqwcg")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=804932424]
+transform = Transform3D(0.3227667, 0.94647855, 0, -0.94647855, 0.3227667, 0, 0, 0, 1, -0.028729936, 0.06504835, -0.03470564)
+layers = 8
+use_collision = true
+collision_layer = 8
+collision_mask = 8
+size = Vector3(2.4685855, 0.056137085, 0.04550171)
+material = SubResource("StandardMaterial3D_oqwcg")
+
+[node name="RepairSound" type="AudioStreamPlayer3D" parent="." unique_id=437249413]
+stream = ExtResource("3_pt713")
+
+[node name="BreakingSound" type="AudioStreamPlayer3D" parent="." unique_id=1432355984]
+transform = Transform3D(0.9090909, 0, 0, 0, 0.9090909, 0, 0, 0, 0.9090909, 0, 0, 0)
+stream = ExtResource("4_e2ml3")

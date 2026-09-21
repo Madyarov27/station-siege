@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://s7usj8iqeshd"]
+
+[ext_resource type="PackedScene" uid="uid://cxht0wyon3y1m" path="res://scenes/zombie+3d+model.glb" id="1_cvunv"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=205353896]
+
+[node name="male_zombie" parent="." unique_id=1990882809 instance=ExtResource("1_cvunv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4136895, 1, 0)
