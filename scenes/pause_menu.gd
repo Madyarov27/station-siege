@@ -4,7 +4,6 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = false
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$ButtonsContainer/ResumeButton.pressed.connect(_on_resume_pressed)
 	$ButtonsContainer/RestartButton.pressed.connect(_on_restart_pressed)
 	$ButtonsContainer/QuitButton.pressed.connect(_on_quit_pressed)

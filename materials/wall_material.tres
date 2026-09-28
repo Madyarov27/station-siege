@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://criihl5nv3pog"]
+
+[ext_resource type="Texture2D" uid="uid://c8hungk5dn34w" path="res://materials/textures/rusty_metal_04/rusty_metal_04_diff_4k.jpg" id="1_eurow"]
+[ext_resource type="Texture2D" uid="uid://dn48f4xqtn8b3" path="res://materials/textures/rusty_metal_04/rusty_metal_04_nor_gl_4k.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cbl7pit5ujg6d" path="res://materials/textures/rusty_metal_04/rusty_metal_04_rough_4k.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bud8sdfth6sed" path="res://materials/textures/rusty_metal_04/rusty_metal_04_metal_4k.png" id="4"]
+
+[resource]
+albedo_texture = ExtResource("1_eurow")
+metallic = 1.0
+metallic_specular = 0.1
+metallic_texture = ExtResource("4")
+roughness_texture = ExtResource("3")
+normal_enabled = true
+normal_texture = ExtResource("2")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 1

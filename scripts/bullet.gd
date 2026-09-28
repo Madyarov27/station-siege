@@ -12,6 +12,7 @@ func _physics_process(delta):
 	var space_state = get_world_3d().direct_space_state
 	var query = PhysicsRayQueryParameters3D.create(from, to)
 	query.exclude = [self]
+	query.collision_mask = 0xFFFFFFFF & ~16
 	
 	var result = space_state.intersect_ray(query)
 	if result:

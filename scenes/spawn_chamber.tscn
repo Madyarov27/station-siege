@@ -1,64 +1,60 @@
 [gd_scene format=3 uid="uid://c46nxuvw5ir4r"]
 
-[ext_resource type="Texture2D" uid="uid://bmnxybh5swckw" path="res://scenes/ChatGPT Image Jul 1, 2026, 02_06_56 AM.png" id="1_gcj1e"]
-[ext_resource type="Texture2D" uid="uid://bfbtu1lnwwlcj" path="res://scenes/ChatGPT Image Jul 1, 2026, 02_18_45 AM.png" id="2_edsu7"]
 [ext_resource type="PackedScene" uid="uid://cglfxppacsxky" path="res://scenes/barricade.tscn" id="3_d0pyr"]
+[ext_resource type="Material" uid="uid://podtpgef1rqx" path="res://materials/ceiling_material.tres" id="CeilingMat"]
+[ext_resource type="Material" uid="uid://c2vy1337drhof" path="res://materials/floor_material.tres" id="FloorMat"]
+[ext_resource type="Material" uid="uid://criihl5nv3pog" path="res://materials/wall_material.tres" id="WallMat"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pb5qw"]
-albedo_texture = ExtResource("1_gcj1e")
-uv1_triplanar = true
-uv1_world_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q54ry"]
-albedo_texture = ExtResource("2_edsu7")
-uv1_scale = Vector3(0.5, 0.5, 0.5)
-uv1_triplanar = true
-uv1_world_triplanar = true
-
-[node name="Node3D" type="Node3D" unique_id=159021827]
+[node name="Node3D2" type="Node3D" unique_id=159021827]
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=647571444]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04228854, -1.676754, -2.7613044)
 use_collision = true
 size = Vector3(3.5012894, 0.48620605, 7.0667)
-material = SubResource("StandardMaterial3D_pb5qw")
+material = ExtResource("FloorMat")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="." unique_id=1316478521]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8793857, 0.13328314, -2.921936)
 use_collision = true
 size = Vector3(0.31933594, 3.665924, 6.901001)
-material = SubResource("StandardMaterial3D_q54ry")
+material = ExtResource("WallMat")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="." unique_id=83044545]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8369992, 0.13328314, -2.921936)
 use_collision = true
 size = Vector3(0.31933594, 3.665924, 6.901001)
-material = SubResource("StandardMaterial3D_q54ry")
+material = ExtResource("WallMat")
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="." unique_id=1024757870]
-transform = Transform3D(-0.0012859539, 0, -0.99999917, 0, 1, 0, 0.99999917, 0, -0.0012859539, -0.029124975, 0.13328314, 0.6108404)
+transform = Transform3D(-0.0012859539, 0, -0.99999917, 0, 1, 0, 0.99999917, 0, -0.0012859539, -0.029124975, 0.46875525, 0.6108404)
 use_collision = true
-size = Vector3(0.31933594, 3.665924, 3.9988956)
-material = SubResource("StandardMaterial3D_q54ry")
+size = Vector3(0.31933594, 4.3368683, 3.9988956)
+material = ExtResource("WallMat")
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="CSGBox3D16" unique_id=1719277921]
-transform = Transform3D(-0.9998591, 0, 0.016773116, 0, 1, 0, -0.016773116, 0, -0.9998591, 0.03238517, -0.6567544, -0.03132109)
+transform = Transform3D(-0.9998591, 0, 0.016773116, 0, 1, 0, -0.016773116, 0, -0.9998591, 0.03238529, -0.82626677, -0.03132109)
 operation = 2
 use_collision = true
-size = Vector3(0.54296875, 2.9397686, 1.7477899)
-material = SubResource("StandardMaterial3D_q54ry")
+size = Vector3(0.54296875, 2.6007438, 1.7477899)
+material = ExtResource("WallMat")
 
 [node name="barricade2" parent="." unique_id=1214983301 instance=ExtResource("3_d0pyr")]
 transform = Transform3D(-0.9999984, 0, 0.0017878682, 0, 1, 0, -0.0017878682, 0, -0.9999984, -0.03162098, -0.31686556, 0.6415279)
+
+[node name="ConcealmentBaffle" type="CSGBox3D" parent="." unique_id=-1356496240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6595, 0.13328314, -1.8)
+use_collision = true
+size = Vector3(2.12, 3.665924, 0.32)
+material = ExtResource("WallMat")
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="." unique_id=1184850348]
 transform = Transform3D(-0.0010148722, 0, -0.99999946, 0, 1, 0, 0.99999946, 0, -0.0010148722, -0.019461393, 0.13328314, -6.381742)
 use_collision = true
 size = Vector3(0.31933594, 3.665924, 4.014435)
-material = SubResource("StandardMaterial3D_q54ry")
+material = ExtResource("WallMat")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1620782292]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04228854, 2.1010346, -2.850513)
 use_collision = true
 size = Vector3(3.5012894, 0.48620605, 6.888283)
-material = SubResource("StandardMaterial3D_pb5qw")
+material = ExtResource("CeilingMat")

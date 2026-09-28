@@ -1,19 +1,14 @@
 [gd_scene format=3 uid="uid://cptsb64mgcv71"]
 
-[ext_resource type="PackedScene" uid="uid://bq0liojeuwb34" path="res://3d models/light.glb" id="1_yky8o"]
+[ext_resource type="PackedScene" uid="uid://u474xpaetc8x" path="res://scenes/ceiling_light.glb" id="1_yky8o"]
 
 [node name="lights" type="Node3D" unique_id=2123651153]
 
-[node name="light" parent="." unique_id=1464792464 instance=ExtResource("1_yky8o")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.0036068559, -0.120824456)
-
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2056827724]
-transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, -8.742278e-08, -1, 4.371139e-08, 1, -8.742278e-08, 1.9106855e-15, 0.07388273, -0.0030845664, 0.018827394)
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, -8.742278e-08, -1, 4.371139e-08, 1, -8.742278e-08, 1.9106855e-15, -0.0077952147, -0.0030845664, -0.15581982)
 light_energy = 0.357
+light_size = 0.297
+omni_range = 8.471
 
-[node name="light2" parent="." unique_id=719840405 instance=ExtResource("1_yky8o")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.0036068559, -0.443618)
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=2140009502]
-transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, -8.742278e-08, -1, 4.371139e-08, 1, -8.742278e-08, 1.9106855e-15, 0.060757257, 0.008810507, -0.31220898)
-light_energy = 0.438
+[node name="Sketchfab_Scene" parent="." unique_id=349526158 instance=ExtResource("1_yky8o")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, -0.14249763)

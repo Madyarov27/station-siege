@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfey144tqmm3a"
-path="res://.godot/imported/tangled+wiring+harness+3d+model_tripo_image_25379d51-7973-4eb8-ac00-c8e48198c2db_0_3.jpg-b65ff4af2e7b3690e244d989df287e57.ctex"
+path.s3tc="res://.godot/imported/tangled+wiring+harness+3d+model_tripo_image_25379d51-7973-4eb8-ac00-c8e48198c2db_0_3.jpg-b65ff4af2e7b3690e244d989df287e57.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "9a271861c25e383e41e321d9d2e40688"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://scenes/tangled+wiring+harness+3d+model_tripo_image_25379d51-7973-4eb8-ac00-c8e48198c2db_0_3.jpg"
-dest_files=["res://.godot/imported/tangled+wiring+harness+3d+model_tripo_image_25379d51-7973-4eb8-ac00-c8e48198c2db_0_3.jpg-b65ff4af2e7b3690e244d989df287e57.ctex"]
+dest_files=["res://.godot/imported/tangled+wiring+harness+3d+model_tripo_image_25379d51-7973-4eb8-ac00-c8e48198c2db_0_3.jpg-b65ff4af2e7b3690e244d989df287e57.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -29,7 +30,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://scenes/damaged+bulkhead+door+3d+model (2)_damaged_bulkhead_door_3d_model_tripo_part_4_normal.jpg"
+roughness/src_normal="res://scenes/tangled+wiring+harness+3d+model_tripo_image_25379d51-7973-4eb8-ac00-c8e48198c2db_0_3.jpg"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

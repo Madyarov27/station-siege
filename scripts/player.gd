@@ -12,14 +12,10 @@ var is_reloading := false
 var reload_timer := 0.0
 var shake_amount := 0.0
 var recoil_velocity := 0.0
-var mouse_hold_time := 0.0
-var single_shot_fired := false
-const AUTO_THRESHOLD := 0.5
 var bob_time := 0.0
 var time_since_damage := 0.0
-var rifle_shots_since_press := 0
-@export var regen_delay := 20.0
-@export var regen_rate := 2.0
+@export var regen_delay := 10.0
+@export var regen_rate := 4.0
 @export var max_health := 100
 @export var bob_frequency := 1.0
 @export var bob_amplitude := 0.08
@@ -28,7 +24,7 @@ var rifle_shots_since_press := 0
 @onready var gun_holder_home: Vector3 = $Camera3D/GunHolder.position
 var gun_kick_offset := Vector3.ZERO
 var crosshair_flash_timer := 0.0
-
+var camera_pitch := 0.0
 const BULLET_SCENE = preload("res://scenes/bullet.tscn")
 const BULLET_SPEED := 80.0
 
@@ -40,6 +36,7 @@ var weapons = {
 		"fire_rate": 0.3,
 		"automatic": false,
 		"sound": preload("res://sounds/pistol_shot.wav"),
+		"reload_sound": preload("res://sounds/pistol_reload.mp3"),
 		"ammo": 12,
 		"mag_size": 12,
 		"range": 20,
@@ -53,6 +50,7 @@ var weapons = {
 		"pellets": 8,
 		"automatic": false,
 		"sound": preload("res://sounds/shotgun_shot.wav"),
+		"reload_sound": preload("res://sounds/shotgun_reload.wav"),
 		"ammo": 4,
 		"mag_size": 4,
 		"range": 4,
@@ -64,20 +62,20 @@ var weapons = {
 		"damage" : 30,
 		"fire_rate": 0.05,
 		"automatic": true,
-		"loop_sound": preload("res://sounds/machinegun_sound.mp3"),
 		"ammo": 36,
 		"mag_size" : 36,
 		"range": 60,
 		"recoil" : 0.2,
 		"kick" : 0.05,
 		"reserve_ammo" : 72,
-		"sound" : preload("res://sounds/machinegun_fireonce_sound.mp3"),
+		"sound" : preload("res://sounds/rifle_shot_trimmed.wav"),
+		"reload_sound": preload("res://sounds/rifle_reload.mp3"),
 	},
 	"sniper": {
 		"damage" : 100,
 		"fire_rate": 1.2,
 		"automatic": false,
-		"sound": preload("res://sounds/sniper_shot.wav"),
+		"sound": preload("res://sounds/rifle_shot.wav"),
 		"ammo": 4,
 		"mag_size": 4,
 		"range": 60,
@@ -94,7 +92,7 @@ var fire_cooldown := 0.0
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
+
 	var box = CylinderMesh.new()
 	box.top_radius = 0.02
 	box.bottom_radius = 0.02
@@ -116,16 +114,23 @@ func _ready():
 
 	update_blood_overlay()
 
+func _notification(what):
+	if what == NOTIFICATION_APPLICATION_FOCUS_IN:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * mouse_sensitivity)
-		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)
-		$Camera3D.rotation.x = clamp($Camera3D.rotation.x, -1.5, 1.5)
+		camera_pitch -= event.relative.y * mouse_sensitivity
+		camera_pitch = clamp(camera_pitch, -1.5, 1.5)
+		$Camera3D.rotation.x = camera_pitch
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = jump_velocity
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if not weapons[current_weapon].get("automatic", false):
-			shoot()
+		# fire immediately on the press itself, don't rely solely on the
+		# _process() hold-polling loop below - a fast single click could
+		# land between process frames and never register a shot otherwise.
+		shoot()
 	if event is InputEventKey and event.pressed:
 		var key_index = -1
 		
@@ -152,7 +157,7 @@ func _physics_process(delta):
 	
 	var current_speed = speed
 	if Input.is_action_pressed("sprint"):
-		current_speed *= 5
+		current_speed *= 1.4
 		
 	if direction:
 		velocity.x = direction.x * current_speed
@@ -175,21 +180,120 @@ func _physics_process(delta):
 		for b in barricades:
 			if global_position.distance_to(b.global_position) < 3.0:
 				b.repair(delta, self)
-		
-	
+
+
 	if Input.is_action_just_pressed("interact"):
+		if reading_note:
+			_close_note()
+			return
+		var notes = get_tree().get_nodes_in_group("notes")
+		for n in notes:
+			if global_position.distance_to(n.global_position) < 3.0:
+				_open_note(n)
+				return
 		print("E pressed")
 		var buys = get_tree().get_nodes_in_group("weapon_shops")
 		var doors = get_tree().get_nodes_in_group("doors")
 		print("doors found: ", doors.size())
 		for c in doors:
-			print("distance to door: ", global_position.distance_to(c.global_position))
-			if global_position.distance_to(c.global_position) < 3.0:
+			var door_pos = c.get_node("frame").global_position if c.has_node("frame") else c.global_position
+			print("door node: ", c.name, " | type: ", c.get_script())
+			if global_position.distance_to(door_pos) < 3.0:
 				print("calling toggle")
-				c.toggle()
+				c.toggle(self)
 		for d in buys:
 			if global_position.distance_to(d.global_position) < 3.0:
 				d.try_buy(self)
+
+	_update_hud_prompts(delta)
+
+var prompt_temp_message := ""
+var prompt_temp_timer := 0.0
+var in_acid_count := 0
+var reading_note := false
+
+func show_temp_message(text: String, duration: float = 1.5):
+	prompt_temp_message = text
+	prompt_temp_timer = duration
+
+func _open_note(note):
+	reading_note = true
+	var reader = get_tree().get_first_node_in_group("note_reader")
+	if reader:
+		reader.show_note(note.note_text)
+
+func _close_note():
+	reading_note = false
+	var reader = get_tree().get_first_node_in_group("note_reader")
+	if reader:
+		reader.hide_note()
+
+func enter_acid():
+	in_acid_count += 1
+
+func exit_acid():
+	in_acid_count = max(0, in_acid_count - 1)
+
+func show_floating_gold(amount: int):
+	var gold_label = get_tree().get_first_node_in_group("gold_label")
+	if gold_label == null:
+		return
+	var hud = gold_label.get_parent()
+	var popup := Label.new()
+	popup.text = "+%d" % amount
+	popup.add_theme_color_override("font_color", Color(1.0, 0.85, 0.2))
+	popup.add_theme_font_size_override("font_size", 22)
+	popup.position = gold_label.position + Vector2(0, 34)
+	hud.add_child(popup)
+	var tween = popup.create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(popup, "position:y", popup.position.y - 36, 1.0)
+	tween.tween_property(popup, "modulate:a", 0.0, 1.0)
+	tween.chain().tween_callback(popup.queue_free)
+
+func _update_hud_prompts(delta):
+	var label = get_tree().get_first_node_in_group("message_label")
+	if prompt_temp_timer > 0.0:
+		prompt_temp_timer -= delta
+		if label:
+			label.text = prompt_temp_message
+	else:
+		var best_text := ""
+		var best_dist := 3.0
+		for d in get_tree().get_nodes_in_group("doors"):
+			if d.is_open:
+				continue
+			var door_pos = d.get_node("frame").global_position if d.has_node("frame") else d.global_position
+			var dist = global_position.distance_to(door_pos)
+			if dist < best_dist:
+				best_dist = dist
+				if d.cost > 0:
+					best_text = "Press E to open (%d Gold)" % d.cost
+				else:
+					best_text = "Press E to open"
+		for s in get_tree().get_nodes_in_group("weapon_shops"):
+			var dist = global_position.distance_to(s.global_position)
+			if dist < best_dist:
+				best_dist = dist
+				best_text = "Press E to interact"
+		for b in get_tree().get_nodes_in_group("barricades"):
+			if b.boards_up >= b.max_boards:
+				continue
+			var dist = global_position.distance_to(b.global_position)
+			if dist < best_dist:
+				best_dist = dist
+				best_text = "Hold SHIFT to repair"
+		for n in get_tree().get_nodes_in_group("notes"):
+			var dist = global_position.distance_to(n.global_position)
+			if dist < best_dist:
+				best_dist = dist
+				best_text = "Press E to read the note"
+		if label and not reading_note:
+			label.text = best_text
+
+	var acid_label = get_tree().get_first_node_in_group("acid_warning_label")
+	if acid_label:
+		acid_label.visible = in_acid_count > 0
 
 			
 func start_reload():
@@ -199,6 +303,11 @@ func start_reload():
 	
 	is_reloading = true
 	reload_timer = 1.5
+	var reload_sound = weapon.get("reload_sound")
+	if reload_sound:
+		reload_timer = reload_sound.get_length()
+		$ReloadSound.stream = reload_sound
+		$ReloadSound.play()
 	$Camera3D/AnimationPlayer.play("switch")
 	print("reloading...")
 					
@@ -213,21 +322,41 @@ func finish_reload():
 	update_ammo_count()
 	print("reloaded")
 		
+func _play_shot_sound(stream: AudioStream):
+	$GunSound.stream = stream
+	$GunSound.pitch_scale = randf_range(0.9, 1.1)
+	$GunSound.play()
+
+var auto_fire_voice_index := 0
+
+func _play_auto_fire_sound(stream: AudioStream):
+	# fire_rate can be shorter than the clip itself (rapid-fire weapons), so a
+	# single AudioStreamPlayer3D would just cut its own previous shot short
+	# every time. Round-robin a small pool instead so each shot is actually
+	# heard in full, the way overlapping real automatic-fire recordings sound.
+	var pool = $AutoFireSoundPool
+	var voice = pool.get_child(auto_fire_voice_index)
+	auto_fire_voice_index = (auto_fire_voice_index + 1) % pool.get_child_count()
+	voice.stream = stream
+	voice.pitch_scale = randf_range(0.95, 1.05)
+	voice.volume_db = 20.0  # +12dB over the pool's base -6dB = ~4x the amplitude
+	voice.play()
+
 func shoot():
 	var weapon = weapons[current_weapon]
-	
-	if fire_cooldown > 0 or weapon["ammo"] == 0 or is_reloading:
+
+	if fire_cooldown > 0 or weapon["ammo"] == 0 or is_reloading or reading_note:
 		return
-		
-	
+
+
 	fire_cooldown = weapon["fire_rate"]
 	recoil_velocity += weapon.get("recoil", 2.0)
 	_eject_casing()
 	gun_kick_offset += Vector3(0, 0, weapon.get("kick", 0.15))
-	if not weapon.get("automatic", false):
-		$GunSound.stream = weapon["sound"]
-		$GunSound.pitch_scale = randf_range(0.9, 1.1)
-		$GunSound.play()
+	if weapon.get("automatic", false):
+		_play_auto_fire_sound(weapon["sound"])
+	else:
+		_play_shot_sound(weapon["sound"])
 	weapon["ammo"] -= 1
 	update_ammo_count()
 	var pellets = weapon.get("pellets", 1)
@@ -320,9 +449,22 @@ func update_blood_overlay():
 		
 		blood.modulate.a = clamp(t, 0.0, 1.0)
 
+var is_dead := false
+
 func die():
+	if is_dead:
+		return
+	is_dead = true
 	print("YOU DIED!")
-	get_tree().reload_current_scene()
+	var screen = get_tree().get_first_node_in_group("game_over_screen")
+	if screen:
+		var wave_manager = get_tree().get_first_node_in_group("wave_manager")
+		var wave_text = ""
+		if wave_manager:
+			wave_text = "You reached wave " + str(wave_manager.current_round)
+		screen.show_screen("YOU DIED", wave_text)
+	else:
+		get_tree().reload_current_scene()
 
 func update_gold_display():
 	var label = get_tree().get_first_node_in_group("gold_label")
@@ -359,36 +501,9 @@ func _process(delta):
 	if weapons[current_weapon].get("automatic", false):
 		var weapon = weapons[current_weapon]
 		var holding = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
-
-		if holding:
-			mouse_hold_time += delta
-		else:
-			mouse_hold_time = 0.0
-			single_shot_fired = false
-			if $GunSound.playing and $GunSound.stream == weapon.get("loop_sound"):
-				$GunSound.stop()
-
-		var can_fire = fire_cooldown <= 0 and weapon["ammo"] > 0 and not is_reloading
-
-		if holding and can_fire:
-			if mouse_hold_time < AUTO_THRESHOLD:
-				# short tap/hold: fire exactly once
-				if not single_shot_fired:
-					shoot()
-					single_shot_fired = true
-					$GunSound.stream = weapon["sound"]
-					$GunSound.volume_db = weapon.get("volume_db", 0.0)
-					$GunSound.play()
-			else:
-				# held past threshold: full auto
-				shoot()
-				if $GunSound.stream != weapon.get("loop_sound"):
-					$GunSound.stream = weapon.get("loop_sound", weapon["sound"])
-					$GunSound.volume_db = weapon.get("volume_db", 0.0)
-					$GunSound.play()
-					
-		if weapon["ammo"] == 0 and $GunSound.playing and $GunSound.stream == weapon.get("loop_sound"):
-			$GunSound.stop()
+		var can_fire = holding and fire_cooldown <= 0 and weapon["ammo"] > 0 and not is_reloading
+		if can_fire:
+			shoot()
 	if crosshair_flash_timer > 0:
 		crosshair_flash_timer -= delta
 		if crosshair_flash_timer <= 0:
@@ -416,8 +531,9 @@ func _process(delta):
 			finish_reload()
 			
 	if recoil_velocity != 0.0:
-		$Camera3D.rotate_x(recoil_velocity * delta)
-		$Camera3D.rotation.x = clamp($Camera3D.rotation.x, -1.5, 1.5)
+		camera_pitch += recoil_velocity * delta
+		camera_pitch = clamp(camera_pitch, -1.5, 1.5)
+		$Camera3D.rotation.x = camera_pitch
 		recoil_velocity = lerp(recoil_velocity, 0.0, delta * 8.0)
 		if abs(recoil_velocity) < 0.001:
 			recoil_velocity = 0.0
@@ -432,4 +548,3 @@ func take_damage(amount):
 	if health <= 0:
 		die()
 	update_health_display()
-		

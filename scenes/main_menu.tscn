@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://drxs6ceqchv7r" path="res://scenes/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="FontFile" uid="uid://38bj3wirs1ka" path="res://scenes/Caveat-VariableFont_wght.ttf" id="2_ekxnf"]
+[ext_resource type="Texture2D" path="res://scenes/menu_background.png" id="3_menubg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_h0k7y"]
 font = ExtResource("2_ekxnf")
@@ -16,12 +17,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
 
-[node name="Background" type="ColorRect" parent="." unique_id=670559747]
+[node name="Background" type="TextureRect" parent="." unique_id=670559747]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(33.643894, 18.680002)
-color = Color(0, 0, 0, 1)
+texture = ExtResource("3_menubg")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="Title" type="Label" parent="." unique_id=848481336]
 layout_mode = 0

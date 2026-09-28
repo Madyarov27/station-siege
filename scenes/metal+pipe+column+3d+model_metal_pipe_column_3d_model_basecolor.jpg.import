@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh6tkj1lpa7i5"
-path="res://.godot/imported/metal+pipe+column+3d+model_metal_pipe_column_3d_model_basecolor.jpg-5b5d02c2fc7e658bc4d6e1626189d41a.ctex"
+path.s3tc="res://.godot/imported/metal+pipe+column+3d+model_metal_pipe_column_3d_model_basecolor.jpg-5b5d02c2fc7e658bc4d6e1626189d41a.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "a4e9a0062d70882f13b58a0a3422664e"
@@ -14,22 +15,22 @@ generator_parameters={
 [deps]
 
 source_file="res://scenes/metal+pipe+column+3d+model_metal_pipe_column_3d_model_basecolor.jpg"
-dest_files=["res://.godot/imported/metal+pipe+column+3d+model_metal_pipe_column_3d_model_basecolor.jpg-5b5d02c2fc7e658bc4d6e1626189d41a.ctex"]
+dest_files=["res://.godot/imported/metal+pipe+column+3d+model_metal_pipe_column_3d_model_basecolor.jpg-5b5d02c2fc7e658bc4d6e1626189d41a.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://scenes/damaged+bulkhead+door+3d+model (2)_damaged_bulkhead_door_3d_model_tripo_part_4_normal.jpg"
+roughness/mode=0
+roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

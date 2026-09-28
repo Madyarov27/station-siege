@@ -39,7 +39,7 @@ texture={
 "compress/high_quality": false,
 "compress/lossy_quality": 0.7,
 "compress/mode": 0,
-"compress/normal_map": 1,
+"compress/normal_map": 0,
 "compress/rdo_quality_loss": 0.0,
 "compress/uastc_level": 0,
 "detect_3d/compress_to": 0,
@@ -55,8 +55,8 @@ texture={
 "process/normal_map_invert_y": false,
 "process/premult_alpha": false,
 "process/size_limit": 0,
-"roughness/mode": 1,
-"roughness/src_normal": "res://scenes/damaged+bulkhead+door+3d+model (2)_damaged_bulkhead_door_3d_model_tripo_part_4_normal.jpg"
+"roughness/mode": 0,
+"roughness/src_normal": ""
 }
 
 [input]
@@ -112,6 +112,11 @@ pause={
 ]
 }
 
+[navigation]
+
+3d/default_cell_size=0.1
+3d/default_cell_height=0.1
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
@@ -121,4 +126,3 @@ pause={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 viewport/hdr_2d=true
-limits/opengl/max_lights_per_object=100

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cdihv2248lboc" path="res://scenes/Zombie Run (3).fbx" id="3_w6ckl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e0s0o"]
-radius = 0.2055664
+radius = 0.31445313
 height = 1.7756348
 
 [sub_resource type="Animation" id="Animation_bawx8"]
@@ -1529,7 +1529,7 @@ groan_sound = ExtResource("2_w6ckl")
 
 [node name="GroanSound" type="AudioStreamPlayer3D" parent="." unique_id=1590782162]
 stream = ExtResource("2_w6ckl")
-volume_db = -7.477
+volume_db = -10.594
 
 [node name="GroanTimer" type="Timer" parent="." unique_id=532296300]
 one_shot = true
@@ -1541,7 +1541,7 @@ shape = SubResource("CapsuleShape3D_e0s0o")
 [node name="zombie" parent="." unique_id=1613892639 instance=ExtResource("3_w6ckl")]
 transform = Transform3D(-1.0999906, 0, 0.0045406683, 0, 1.1, 0, -0.0045406683, 0, -1.0999906, 0.02844429, 0.0910238, 0.020935059)
 
-[node name="Skeleton3D" parent="zombie" index="0" unique_id=1895114848]
+[node name="Skeleton3D" parent="zombie" index="0" unique_id=1321501772]
 bones/0/position = Vector3(0.005551294, 0.9666241, -0.016152296)
 bones/0/rotation = Quaternion(-0.024039859, -0.01734381, 0.013788319, 0.99946547)
 bones/1/position = Vector3(-6.7762636e-21, 0.08836052, -0.01360826)

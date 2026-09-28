@@ -1,70 +1,160 @@
 [gd_scene format=3 uid="uid://cglfxppacsxky"]
 
 [ext_resource type="Script" uid="uid://8rxgjfuadu4u" path="res://scenes/boards_up.gd" id="1_k4dkl"]
-[ext_resource type="Texture2D" uid="uid://d346ictuqmoo0" path="res://scenes/Poliigon_MetalRust_7642_BaseColor.jpg" id="2_wwsqi"]
 [ext_resource type="AudioStream" uid="uid://dnf4y33kpaags" path="res://addons/ribhavagrawal-metal-beaten-sfx-230501.mp3" id="3_pt713"]
 [ext_resource type="AudioStream" uid="uid://cmp56x7wh1dt4" path="res://scenes/barricade_break_1s.mp3" id="4_e2ml3"]
+[ext_resource type="Material" uid="uid://buejxyyv82d1m" path="res://materials/barricade_material.tres" id="5_rodmat"]
+[ext_resource type="Texture2D" uid="uid://c8hungk5dn34w" path="res://materials/textures/rusty_metal_04/rusty_metal_04_diff_4k.jpg" id="5_xaimb"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oqwcg"]
-albedo_texture = ExtResource("2_wwsqi")
-uv1_triplanar = true
+[sub_resource type="CylinderMesh" id="CylinderMesh_rod1"]
+top_radius = 0.045
+bottom_radius = 0.045
+height = 2.4532228
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rod1"]
+height = 2.3
+radius = 0.045
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rod2"]
+top_radius = 0.03
+bottom_radius = 0.03
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rod2"]
+radius = 0.03
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rod3"]
+top_radius = 0.035
+bottom_radius = 0.035
+height = 1.9
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rod3"]
+height = 1.9
+radius = 0.035
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rod4"]
+top_radius = 0.025
+bottom_radius = 0.025
+height = 1.8
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rod4"]
+height = 1.8
+radius = 0.025
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rod5"]
+top_radius = 0.04
+bottom_radius = 0.04
+height = 2.4559815
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rod5"]
+height = 2.1
+radius = 0.04
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rod6"]
+top_radius = 0.03
+bottom_radius = 0.03
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rod6"]
+radius = 0.03
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0s0o"]
+albedo_texture = ExtResource("5_xaimb")
+texture_filter = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_barrier"]
+size = Vector3(2.15, 2.45, 0.2)
 
 [node name="barricade" type="Node3D" unique_id=1214983301]
 script = ExtResource("1_k4dkl")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1495036964]
-transform = Transform3D(0.11022154, 0.99390715, 0, -0.99390715, 0.11022154, 0, 0, 0, 1, 0.2356777, 0.075322375, -0.004635006)
-use_collision = true
+[node name="Rod1" type="MeshInstance3D" parent="." unique_id=596297986]
+transform = Transform3D(0.990268, 0.139173, 0, -0.139173, 0.990268, 0, 0, 0, 1, -0.30933776, 0.02586582, -0.02)
+mesh = SubResource("CylinderMesh_rod1")
+surface_material_override/0 = ExtResource("5_rodmat")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rod1" unique_id=113442233]
 collision_layer = 8
 collision_mask = 8
-size = Vector3(2.3930073, 0.062401295, 0.086364746)
-material = SubResource("StandardMaterial3D_oqwcg")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=2020062845]
-transform = Transform3D(0.9726161, 0.23241778, 0, -0.23241778, 0.9726161, 0, 0, 0, 1, -0.03961725, -0.24143149, -0.035047114)
-use_collision = true
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rod1/StaticBody3D" unique_id=358284039]
+transform = Transform3D(1.0000031, 7.4505806e-08, 0, -7.4505806e-08, 1.0000031, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_rod1")
+
+[node name="Rod2" type="MeshInstance3D" parent="." unique_id=86946810]
+transform = Transform3D(0.087156, 0.996195, 0, -0.996195, 0.087156, 0, 0, 0, 1, 0.03, 0.32, -0.045)
+mesh = SubResource("CylinderMesh_rod2")
+surface_material_override/0 = ExtResource("5_rodmat")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rod2" unique_id=427585841]
 collision_layer = 8
 collision_mask = 8
-size = Vector3(1.8167565, 0.06731415, 0.05555725)
-material = SubResource("StandardMaterial3D_oqwcg")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=636974424]
-transform = Transform3D(0.9570137, 0.2900423, 0, -0.2900423, 0.9570137, 0, 0, 0, 1, -0.054136045, 0.6326506, -0.008637428)
-use_collision = true
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rod2/StaticBody3D" unique_id=708587895]
+shape = SubResource("CylinderShape3D_rod2")
+
+[node name="Rod3" type="MeshInstance3D" parent="." unique_id=1010819692]
+transform = Transform3D(-0.034899, 0.999391, 0, -0.999391, -0.034899, 0, 0, 0, 1, 0, 0.7, -0.03)
+mesh = SubResource("CylinderMesh_rod3")
+surface_material_override/0 = ExtResource("5_rodmat")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rod3" unique_id=339687828]
 collision_layer = 8
 collision_mask = 8
-size = Vector3(1.8664551, 0.047546387, 0.045959473)
-material = SubResource("StandardMaterial3D_oqwcg")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=680706111]
-transform = Transform3D(-0.16056941, 0.9870246, 0, -0.9870246, -0.16056941, 0, 0, 0, 1, -0.20304933, 0.06990516, -0.034814835)
-use_collision = true
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rod3/StaticBody3D" unique_id=827911120]
+shape = SubResource("CylinderShape3D_rod3")
+
+[node name="Rod4" type="MeshInstance3D" parent="." unique_id=946451796]
+transform = Transform3D(-0.121869, 0.992546, 0, -0.992546, -0.121869, 0, 0, 0, 1, -0.03, -0.15, -0.055)
+mesh = SubResource("CylinderMesh_rod4")
+surface_material_override/0 = ExtResource("5_rodmat")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rod4" unique_id=944032088]
 collision_layer = 8
 collision_mask = 8
-size = Vector3(2.407629, 0.050720215, 0.05231476)
-material = SubResource("StandardMaterial3D_oqwcg")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=96624595]
-transform = Transform3D(0.99842024, -0.056187373, 0, 0.056187373, 0.99842024, 0, 0, 0, 1, -0.0541778, 0.18522783, -0.03470564)
-layers = 8
-use_collision = true
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rod4/StaticBody3D" unique_id=487507700]
+shape = SubResource("CylinderShape3D_rod4")
+
+[node name="Rod5" type="MeshInstance3D" parent="." unique_id=1150593083]
+transform = Transform3D(0.994522, -0.104528, 0, 0.104528, 0.994522, 0, 0, 0, 1, 0.32479385, 0.03438939, -0.07)
+mesh = SubResource("CylinderMesh_rod5")
+surface_material_override/0 = ExtResource("5_rodmat")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rod5" unique_id=942221485]
 collision_layer = 8
 collision_mask = 8
-size = Vector3(1.7813993, 0.056137085, 0.04550171)
-material = SubResource("StandardMaterial3D_oqwcg")
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=804932424]
-transform = Transform3D(0.3227667, 0.94647855, 0, -0.94647855, 0.3227667, 0, 0, 0, 1, -0.028729936, 0.06504835, -0.03470564)
-layers = 8
-use_collision = true
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rod5/StaticBody3D" unique_id=65209081]
+shape = SubResource("CylinderShape3D_rod5")
+
+[node name="Rod6" type="MeshInstance3D" parent="." unique_id=1571881827]
+transform = Transform3D(0.173648, 0.984808, 0, -0.984808, 0.173648, 0, 0, 0, 1, 0, -0.6, -0.065)
+mesh = SubResource("CylinderMesh_rod6")
+surface_material_override/0 = ExtResource("5_rodmat")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rod6" unique_id=428202275]
 collision_layer = 8
 collision_mask = 8
-size = Vector3(2.4685855, 0.056137085, 0.04550171)
-material = SubResource("StandardMaterial3D_oqwcg")
 
-[node name="RepairSound" type="AudioStreamPlayer3D" parent="." unique_id=437249413]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rod6/StaticBody3D" unique_id=255339190]
+shape = SubResource("CylinderShape3D_rod6")
+
+[node name="BarrierCollision" type="StaticBody3D" parent="." unique_id=1962847503]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BarrierCollision" unique_id=1962847504]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0207, 0.0259, -0.0425)
+shape = SubResource("BoxShape3D_barrier")
+
+[node name="RepairSound" type="AudioStreamPlayer3D" parent="." unique_id=1297087683]
 stream = ExtResource("3_pt713")
 
-[node name="BreakingSound" type="AudioStreamPlayer3D" parent="." unique_id=1432355984]
+[node name="BreakingSound" type="AudioStreamPlayer3D" parent="." unique_id=60315528]
 transform = Transform3D(0.9090909, 0, 0, 0, 0.9090909, 0, 0, 0, 0.9090909, 0, 0, 0)
 stream = ExtResource("4_e2ml3")
+
+[node name="Bottom" type="CSGBox3D" parent="." unique_id=2124900659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.054718018, -1.0009189, -0.0009765625)
+size = Vector3(2.0940552, 0.37747192, 0.3876953)
+material = SubResource("StandardMaterial3D_e0s0o")

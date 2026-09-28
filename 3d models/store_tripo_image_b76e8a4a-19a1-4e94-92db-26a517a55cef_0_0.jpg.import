@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8em448aulc5b"
-path="res://.godot/imported/store_tripo_image_b76e8a4a-19a1-4e94-92db-26a517a55cef_0_0.jpg-dee1ac690b7e824aa987beb2aedfe2c6.ctex"
+path.s3tc="res://.godot/imported/store_tripo_image_b76e8a4a-19a1-4e94-92db-26a517a55cef_0_0.jpg-dee1ac690b7e824aa987beb2aedfe2c6.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "d48d7a62c4d741ac81c5ae024bbe0a2d"
@@ -14,22 +15,22 @@ generator_parameters={
 [deps]
 
 source_file="res://3d models/store_tripo_image_b76e8a4a-19a1-4e94-92db-26a517a55cef_0_0.jpg"
-dest_files=["res://.godot/imported/store_tripo_image_b76e8a4a-19a1-4e94-92db-26a517a55cef_0_0.jpg-dee1ac690b7e824aa987beb2aedfe2c6.ctex"]
+dest_files=["res://.godot/imported/store_tripo_image_b76e8a4a-19a1-4e94-92db-26a517a55cef_0_0.jpg-dee1ac690b7e824aa987beb2aedfe2c6.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://scenes/damaged+bulkhead+door+3d+model (2)_damaged_bulkhead_door_3d_model_tripo_part_4_normal.jpg"
+roughness/mode=0
+roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

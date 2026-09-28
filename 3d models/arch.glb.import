@@ -39,7 +39,15 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"tripo_mat_5f8d047b-a9c1-4cdf-8d00-4db29f3215be": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://3d models/arch_material_override.tres",
+"use_external/path": "res://3d models/arch_material_override.tres"
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
 gltf/texture_map_mode=1

@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://q6w40xa56w83"
-path="res://.godot/imported/industrial+sci-fi+panel+3d+model_tripo_image_85cd6b5f-58cd-4546-a8c2-739ae1565fa1_0_3.jpg-96abaa62faad1b750023b75a36de0152.ctex"
+path.s3tc="res://.godot/imported/industrial+sci-fi+panel+3d+model_tripo_image_85cd6b5f-58cd-4546-a8c2-739ae1565fa1_0_3.jpg-96abaa62faad1b750023b75a36de0152.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "371d2baa19fad8710cebfa57d2ea3b9c"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://scenes/industrial+sci-fi+panel+3d+model_tripo_image_85cd6b5f-58cd-4546-a8c2-739ae1565fa1_0_3.jpg"
-dest_files=["res://.godot/imported/industrial+sci-fi+panel+3d+model_tripo_image_85cd6b5f-58cd-4546-a8c2-739ae1565fa1_0_3.jpg-96abaa62faad1b750023b75a36de0152.ctex"]
+dest_files=["res://.godot/imported/industrial+sci-fi+panel+3d+model_tripo_image_85cd6b5f-58cd-4546-a8c2-739ae1565fa1_0_3.jpg-96abaa62faad1b750023b75a36de0152.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -29,7 +30,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://scenes/damaged+bulkhead+door+3d+model (2)_damaged_bulkhead_door_3d_model_tripo_part_4_normal.jpg"
+roughness/src_normal="res://scenes/industrial+sci-fi+panel+3d+model_tripo_image_85cd6b5f-58cd-4546-a8c2-739ae1565fa1_0_3.jpg"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

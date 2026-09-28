@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://djsf53che5hrr"]
 
-[ext_resource type="Script" uid="uid://b64px3d5ulmwa" path="res://scripts/buyable_door.gd" id="1_hpvv5"]
 [ext_resource type="PackedScene" uid="uid://c5twl1yb3x3f0" path="res://3d models/door.glb" id="2_uvdjg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e0s0o"]
 size = Vector3(0.55426025, 1.136795, 0.07795715)
 
 [node name="Door" type="Node3D" unique_id=1669922765 groups=["doors"]]
-script = ExtResource("1_hpvv5")
 
 [node name="door" parent="." unique_id=486378307 instance=ExtResource("2_uvdjg")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 0.2, 0, -0.6979968, 0)

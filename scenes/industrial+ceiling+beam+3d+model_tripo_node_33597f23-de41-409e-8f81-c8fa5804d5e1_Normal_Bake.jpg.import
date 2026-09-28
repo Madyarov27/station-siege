@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://w1l1cxh6483u"
-path="res://.godot/imported/industrial+ceiling+beam+3d+model_tripo_node_33597f23-de41-409e-8f81-c8fa5804d5e1_Normal_Bake.jpg-fd39099e5950bddca28150b0ef8a1827.ctex"
+path.s3tc="res://.godot/imported/industrial+ceiling+beam+3d+model_tripo_node_33597f23-de41-409e-8f81-c8fa5804d5e1_Normal_Bake.jpg-fd39099e5950bddca28150b0ef8a1827.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "6ec8bb096875f58fe31e9ba7d44bfa5f"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://scenes/industrial+ceiling+beam+3d+model_tripo_node_33597f23-de41-409e-8f81-c8fa5804d5e1_Normal_Bake.jpg"
-dest_files=["res://.godot/imported/industrial+ceiling+beam+3d+model_tripo_node_33597f23-de41-409e-8f81-c8fa5804d5e1_Normal_Bake.jpg-fd39099e5950bddca28150b0ef8a1827.ctex"]
+dest_files=["res://.godot/imported/industrial+ceiling+beam+3d+model_tripo_node_33597f23-de41-409e-8f81-c8fa5804d5e1_Normal_Bake.jpg-fd39099e5950bddca28150b0ef8a1827.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -29,7 +30,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://scenes/damaged+bulkhead+door+3d+model (2)_damaged_bulkhead_door_3d_model_tripo_part_4_normal.jpg"
+roughness/src_normal="res://scenes/industrial+ceiling+beam+3d+model_tripo_node_33597f23-de41-409e-8f81-c8fa5804d5e1_Normal_Bake.jpg"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
