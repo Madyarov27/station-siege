@@ -6,6 +6,8 @@ First-person zombie shooter set on an abandoned space station. You get 10 waves.
 
 **Play it in your browser: [madyarov27.itch.io/station-siege](https://madyarov27.itch.io/station-siege)**
 
+Nothing to install. Open the link, click Start, and click inside the game window to lock the mouse. Works best in Chrome or Edge on a desktop.
+
 ## Controls
 
 | Key | Action |
@@ -24,7 +26,7 @@ Click once inside the game window and it grabs your mouse.
 ## What's in it
 
 - 10 waves, and each one sends more zombies than the last.
-- Pistol, shotgun, machine gun and sniper. You start with the pistol and find or buy the rest.
+- Three weapons: pistol, shotgun and machine gun. You start with the pistol and buy the other two from vending machines.
 - Kill zombies for gold, then spend it at the vending machines on weapons, ammo and doors to new parts of the station.
 - Zombies come out of spawn rooms blocked by barricades. They tear the boards off, and you can nail them back on for a bit of gold.
 - There's a note near where you spawn that explains what happened here.
