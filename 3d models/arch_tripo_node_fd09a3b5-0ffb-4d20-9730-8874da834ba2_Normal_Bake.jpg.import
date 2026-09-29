@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://p2xctodhdsim"
-path.s3tc="res://.godot/imported/arch_tripo_node_fd09a3b5-0ffb-4d20-9730-8874da834ba2_Normal_Bake.jpg-72e308014d61beed0ecff5285f10dc6d.s3tc.ctex"
+path="res://.godot/imported/arch_tripo_node_fd09a3b5-0ffb-4d20-9730-8874da834ba2_Normal_Bake.jpg-72e308014d61beed0ecff5285f10dc6d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "a690d84c0ab84fa4fe5e9c74593cf467"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://3d models/arch_tripo_node_fd09a3b5-0ffb-4d20-9730-8874da834ba2_Normal_Bake.jpg"
-dest_files=["res://.godot/imported/arch_tripo_node_fd09a3b5-0ffb-4d20-9730-8874da834ba2_Normal_Bake.jpg-72e308014d61beed0ecff5285f10dc6d.s3tc.ctex"]
+dest_files=["res://.godot/imported/arch_tripo_node_fd09a3b5-0ffb-4d20-9730-8874da834ba2_Normal_Bake.jpg-72e308014d61beed0ecff5285f10dc6d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

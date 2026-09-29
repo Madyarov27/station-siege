@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh6tkj1lpa7i5"
-path.s3tc="res://.godot/imported/metal+pipe+column+3d+model_metal_pipe_column_3d_model_basecolor.jpg-5b5d02c2fc7e658bc4d6e1626189d41a.s3tc.ctex"
+path="res://.godot/imported/metal+pipe+column+3d+model_metal_pipe_column_3d_model_basecolor.jpg-5b5d02c2fc7e658bc4d6e1626189d41a.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "a4e9a0062d70882f13b58a0a3422664e"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://scenes/metal+pipe+column+3d+model_metal_pipe_column_3d_model_basecolor.jpg"
-dest_files=["res://.godot/imported/metal+pipe+column+3d+model_metal_pipe_column_3d_model_basecolor.jpg-5b5d02c2fc7e658bc4d6e1626189d41a.s3tc.ctex"]
+dest_files=["res://.godot/imported/metal+pipe+column+3d+model_metal_pipe_column_3d_model_basecolor.jpg-5b5d02c2fc7e658bc4d6e1626189d41a.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

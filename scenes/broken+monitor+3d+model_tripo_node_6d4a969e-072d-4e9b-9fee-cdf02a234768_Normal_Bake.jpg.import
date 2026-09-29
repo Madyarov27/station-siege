@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctck6v3njyy1c"
-path.s3tc="res://.godot/imported/broken+monitor+3d+model_tripo_node_6d4a969e-072d-4e9b-9fee-cdf02a234768_Normal_Bake.jpg-cea672c16f96c6b67e8f7913b8524629.s3tc.ctex"
+path="res://.godot/imported/broken+monitor+3d+model_tripo_node_6d4a969e-072d-4e9b-9fee-cdf02a234768_Normal_Bake.jpg-cea672c16f96c6b67e8f7913b8524629.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "6fdfad920b8b6935d27c6d1f33d7dde9"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://scenes/broken+monitor+3d+model_tripo_node_6d4a969e-072d-4e9b-9fee-cdf02a234768_Normal_Bake.jpg"
-dest_files=["res://.godot/imported/broken+monitor+3d+model_tripo_node_6d4a969e-072d-4e9b-9fee-cdf02a234768_Normal_Bake.jpg-cea672c16f96c6b67e8f7913b8524629.s3tc.ctex"]
+dest_files=["res://.godot/imported/broken+monitor+3d+model_tripo_node_6d4a969e-072d-4e9b-9fee-cdf02a234768_Normal_Bake.jpg-cea672c16f96c6b67e8f7913b8524629.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

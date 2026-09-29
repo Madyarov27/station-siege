@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxucijm3lfk1g"
-path.s3tc="res://.godot/imported/vepr_vpo_205-00_24.jpg-e4d20fbe025fb04f664adc5c52b1bd03.s3tc.ctex"
+path="res://.godot/imported/vepr_vpo_205-00_24.jpg-e4d20fbe025fb04f664adc5c52b1bd03.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "7d21de23628167195f7a8e9783a4e84f"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://3d models/vepr_vpo_205-00_24.jpg"
-dest_files=["res://.godot/imported/vepr_vpo_205-00_24.jpg-e4d20fbe025fb04f664adc5c52b1bd03.s3tc.ctex"]
+dest_files=["res://.godot/imported/vepr_vpo_205-00_24.jpg-e4d20fbe025fb04f664adc5c52b1bd03.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

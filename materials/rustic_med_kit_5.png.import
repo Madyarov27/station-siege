@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pkhdlkfnmidb"
-path.s3tc="res://.godot/imported/rustic_med_kit_5.png-8fb812a1baf5bc4d9e1752b6eab7257d.s3tc.ctex"
+path="res://.godot/imported/rustic_med_kit_5.png-8fb812a1baf5bc4d9e1752b6eab7257d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "af99c604939e8e02ba9a903cf40bc995"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://materials/rustic_med_kit_5.png"
-dest_files=["res://.godot/imported/rustic_med_kit_5.png-8fb812a1baf5bc4d9e1752b6eab7257d.s3tc.ctex"]
+dest_files=["res://.godot/imported/rustic_med_kit_5.png-8fb812a1baf5bc4d9e1752b6eab7257d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

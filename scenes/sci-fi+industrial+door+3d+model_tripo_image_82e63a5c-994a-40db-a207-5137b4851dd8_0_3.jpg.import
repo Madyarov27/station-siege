@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2x64jn3gfgyv"
-path.s3tc="res://.godot/imported/sci-fi+industrial+door+3d+model_tripo_image_82e63a5c-994a-40db-a207-5137b4851dd8_0_3.jpg-1cc9c25f6d2e92ac95f898ea38f0dcdc.s3tc.ctex"
+path="res://.godot/imported/sci-fi+industrial+door+3d+model_tripo_image_82e63a5c-994a-40db-a207-5137b4851dd8_0_3.jpg-1cc9c25f6d2e92ac95f898ea38f0dcdc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "f14c57870e1f4bc29f36597a7d93147f"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://scenes/sci-fi+industrial+door+3d+model_tripo_image_82e63a5c-994a-40db-a207-5137b4851dd8_0_3.jpg"
-dest_files=["res://.godot/imported/sci-fi+industrial+door+3d+model_tripo_image_82e63a5c-994a-40db-a207-5137b4851dd8_0_3.jpg-1cc9c25f6d2e92ac95f898ea38f0dcdc.s3tc.ctex"]
+dest_files=["res://.godot/imported/sci-fi+industrial+door+3d+model_tripo_image_82e63a5c-994a-40db-a207-5137b4851dd8_0_3.jpg-1cc9c25f6d2e92ac95f898ea38f0dcdc.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

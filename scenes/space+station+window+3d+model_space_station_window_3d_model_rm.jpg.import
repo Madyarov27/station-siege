@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mfgdh44x6mcq"
-path.s3tc="res://.godot/imported/space+station+window+3d+model_space_station_window_3d_model_rm.jpg-d369537880dec87263c4ac88cd3f9be1.s3tc.ctex"
+path="res://.godot/imported/space+station+window+3d+model_space_station_window_3d_model_rm.jpg-d369537880dec87263c4ac88cd3f9be1.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "2c80d5f3e179f925c356b34452756d8f"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://scenes/space+station+window+3d+model_space_station_window_3d_model_rm.jpg"
-dest_files=["res://.godot/imported/space+station+window+3d+model_space_station_window_3d_model_rm.jpg-d369537880dec87263c4ac88cd3f9be1.s3tc.ctex"]
+dest_files=["res://.godot/imported/space+station+window+3d+model_space_station_window_3d_model_rm.jpg-d369537880dec87263c4ac88cd3f9be1.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

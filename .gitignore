@@ -1,8 +1,14 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-*.fbx
-*.fbx
-*.glb
-*.mp3
-*.wav
+
+# unused assets moved out of the project
+/_UNUSED/
+
+# web export output
+/station-siege.html
+/station-siege.js
+/station-siege.wasm
+/station-siege.pck
+/station-siege.*.js
+/station-siege*.png

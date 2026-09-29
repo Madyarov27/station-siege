@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmvrc5q4p1vgq"
-path.s3tc="res://.godot/imported/rusty_barrel (1)_3.png-b6b255ab3d8a7f531cb2c164f4e3aefa.s3tc.ctex"
+path="res://.godot/imported/rusty_barrel (1)_3.png-b6b255ab3d8a7f531cb2c164f4e3aefa.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "64aa4ef6b2751a1693f50c610e2890e3"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://materials/rusty_barrel (1)_3.png"
-dest_files=["res://.godot/imported/rusty_barrel (1)_3.png-b6b255ab3d8a7f531cb2c164f4e3aefa.s3tc.ctex"]
+dest_files=["res://.godot/imported/rusty_barrel (1)_3.png-b6b255ab3d8a7f531cb2c164f4e3aefa.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://y1mwl2k7jhga"
-path.s3tc="res://.godot/imported/granite_counter_with_3_doors_5.png-089171db2ba764974e225257b6117bdf.s3tc.ctex"
+path="res://.godot/imported/granite_counter_with_3_doors_5.png-089171db2ba764974e225257b6117bdf.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "f16b712053f4cb323b0335e55b403e82"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://scenes/granite_counter_with_3_doors_5.png"
-dest_files=["res://.godot/imported/granite_counter_with_3_doors_5.png-089171db2ba764974e225257b6117bdf.s3tc.ctex"]
+dest_files=["res://.godot/imported/granite_counter_with_3_doors_5.png-089171db2ba764974e225257b6117bdf.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

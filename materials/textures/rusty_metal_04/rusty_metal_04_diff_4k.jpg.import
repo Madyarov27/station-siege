@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8hungk5dn34w"
-path.s3tc="res://.godot/imported/rusty_metal_04_diff_4k.jpg-2a5d5ef8cab38351e2163eb650aab72e.s3tc.ctex"
+path="res://.godot/imported/rusty_metal_04_diff_4k.jpg-2a5d5ef8cab38351e2163eb650aab72e.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://materials/textures/rusty_metal_04/rusty_metal_04_diff_4k.jpg"
-dest_files=["res://.godot/imported/rusty_metal_04_diff_4k.jpg-2a5d5ef8cab38351e2163eb650aab72e.s3tc.ctex"]
+dest_files=["res://.godot/imported/rusty_metal_04_diff_4k.jpg-2a5d5ef8cab38351e2163eb650aab72e.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -37,5 +36,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

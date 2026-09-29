@@ -29,4 +29,4 @@ func _on_restart_pressed():
 	
 func _on_quit_pressed():
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/node_3d.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

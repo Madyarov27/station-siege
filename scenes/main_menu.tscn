@@ -8,6 +8,21 @@
 font = ExtResource("2_ekxnf")
 font_size = 50
 
+[sub_resource type="LabelSettings" id="LabelSettings_loading"]
+font = ExtResource("2_ekxnf")
+font_size = 50
+font_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_controls"]
+font = ExtResource("2_ekxnf")
+font_size = 34
+font_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_controls_keys"]
+font = ExtResource("2_ekxnf")
+font_size = 34
+font_color = Color(1, 0.82, 0.35, 1)
+
 [node name="Control" type="Control" unique_id=1776794077]
 layout_mode = 3
 anchors_preset = 15
@@ -18,10 +33,12 @@ grow_vertical = 2
 script = ExtResource("1_l6cm7")
 
 [node name="Background" type="TextureRect" parent="." unique_id=670559747]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(33.643894, 18.680002)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("3_menubg")
 expand_mode = 1
 stretch_mode = 6
@@ -47,7 +64,108 @@ layout_mode = 2
 text = "Start
 "
 
+[node name="ControlsButton" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+text = "Controls"
+
 [node name="QuitButton" type="Button" parent="ButtonsContainer" unique_id=1724729858]
 layout_mode = 2
 text = "Quit
 "
+
+[node name="ControlsScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="ControlsScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.9)
+
+[node name="Title" type="Label" parent="ControlsScreen"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 30.0
+offset_right = 1100.0
+offset_bottom = 95.0
+text = "Controls"
+label_settings = SubResource("LabelSettings_h0k7y")
+horizontal_alignment = 1
+
+[node name="Keys" type="Label" parent="ControlsScreen"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 110.0
+offset_right = 560.0
+offset_bottom = 510.0
+text = "W A S D
+Shift
+Left click
+R
+1 - 3
+E
+Hold F
+Esc"
+label_settings = SubResource("LabelSettings_controls_keys")
+horizontal_alignment = 2
+
+[node name="Actions" type="Label" parent="ControlsScreen"]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 110.0
+offset_right = 1100.0
+offset_bottom = 510.0
+text = "Move
+Sprint
+Shoot
+Reload
+Switch weapon
+Interact, buy, read notes
+Repair barricade
+Pause"
+label_settings = SubResource("LabelSettings_controls")
+
+[node name="BackButton" type="Button" parent="ControlsScreen"]
+layout_mode = 0
+offset_left = 555.0
+offset_top = 530.0
+offset_right = 645.0
+offset_bottom = 565.0
+text = "Back"
+
+[node name="LoadingScreen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+visible = false
+
+[node name="Background" type="ColorRect" parent="LoadingScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.9)
+
+[node name="Label" type="Label" parent="LoadingScreen"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 280.0
+offset_right = 1100.0
+offset_bottom = 340.0
+text = "Loading..."
+label_settings = SubResource("LabelSettings_loading")
+horizontal_alignment = 1

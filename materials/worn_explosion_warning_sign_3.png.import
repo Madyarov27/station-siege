@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ce128723t7i86"
-path.s3tc="res://.godot/imported/worn_explosion_warning_sign_3.png-268b078aa913161f58ea9a26ab14f9ca.s3tc.ctex"
+path="res://.godot/imported/worn_explosion_warning_sign_3.png-268b078aa913161f58ea9a26ab14f9ca.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "44c520a07c94c5a3ee041cba09e99532"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://materials/worn_explosion_warning_sign_3.png"
-dest_files=["res://.godot/imported/worn_explosion_warning_sign_3.png-268b078aa913161f58ea9a26ab14f9ca.s3tc.ctex"]
+dest_files=["res://.godot/imported/worn_explosion_warning_sign_3.png-268b078aa913161f58ea9a26ab14f9ca.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

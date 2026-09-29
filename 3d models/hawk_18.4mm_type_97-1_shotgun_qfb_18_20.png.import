@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxb6a85hhvkb5"
-path.s3tc="res://.godot/imported/hawk_18.4mm_type_97-1_shotgun_qfb_18_20.png-8634ec0be92e692856cefb3b563cdc2a.s3tc.ctex"
+path="res://.godot/imported/hawk_18.4mm_type_97-1_shotgun_qfb_18_20.png-8634ec0be92e692856cefb3b563cdc2a.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "c93f5d9f20695b3b42f7b89623bf3a78"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://3d models/hawk_18.4mm_type_97-1_shotgun_qfb_18_20.png"
-dest_files=["res://.godot/imported/hawk_18.4mm_type_97-1_shotgun_qfb_18_20.png-8634ec0be92e692856cefb3b563cdc2a.s3tc.ctex"]
+dest_files=["res://.godot/imported/hawk_18.4mm_type_97-1_shotgun_qfb_18_20.png-8634ec0be92e692856cefb3b563cdc2a.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

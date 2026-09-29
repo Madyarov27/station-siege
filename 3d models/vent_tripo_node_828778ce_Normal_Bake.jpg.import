@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cn3tbj0bup3sw"
-path.s3tc="res://.godot/imported/vent_tripo_node_828778ce_Normal_Bake.jpg-d182ef2d635a1e5d45d9f7d51533cead.s3tc.ctex"
+path="res://.godot/imported/vent_tripo_node_828778ce_Normal_Bake.jpg-d182ef2d635a1e5d45d9f7d51533cead.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "b7138b45b3a4f43af40638382505c3d2"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://3d models/vent_tripo_node_828778ce_Normal_Bake.jpg"
-dest_files=["res://.godot/imported/vent_tripo_node_828778ce_Normal_Bake.jpg-d182ef2d635a1e5d45d9f7d51533cead.s3tc.ctex"]
+dest_files=["res://.godot/imported/vent_tripo_node_828778ce_Normal_Bake.jpg-d182ef2d635a1e5d45d9f7d51533cead.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnfkmd8k2ltiq"
-path.s3tc="res://.godot/imported/rusty+metal+frame+3d+model_tripo_image_32163796-0975-44ab-9607-4a522974de4e_0_0.jpg-c45c52fe1357ff0b385a387773e7a6f6.s3tc.ctex"
+path="res://.godot/imported/rusty+metal+frame+3d+model_tripo_image_32163796-0975-44ab-9607-4a522974de4e_0_0.jpg-c45c52fe1357ff0b385a387773e7a6f6.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "f20c44a34f716ddadad065890c8bcd32"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://scenes/rusty+metal+frame+3d+model_tripo_image_32163796-0975-44ab-9607-4a522974de4e_0_0.jpg"
-dest_files=["res://.godot/imported/rusty+metal+frame+3d+model_tripo_image_32163796-0975-44ab-9607-4a522974de4e_0_0.jpg-c45c52fe1357ff0b385a387773e7a6f6.s3tc.ctex"]
+dest_files=["res://.godot/imported/rusty+metal+frame+3d+model_tripo_image_32163796-0975-44ab-9607-4a522974de4e_0_0.jpg-c45c52fe1357ff0b385a387773e7a6f6.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

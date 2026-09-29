@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://by5tapd4xgnkk"
-path.s3tc="res://.godot/imported/metal_plate_02_metal_4k.png-9f0d953e88fa6753ab7a53dc33d7b5e8.s3tc.ctex"
+path="res://.godot/imported/metal_plate_02_metal_4k.png-9f0d953e88fa6753ab7a53dc33d7b5e8.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://materials/textures/metal_plate_02/metal_plate_02_metal_4k.png"
-dest_files=["res://.godot/imported/metal_plate_02_metal_4k.png-9f0d953e88fa6753ab7a53dc33d7b5e8.s3tc.ctex"]
+dest_files=["res://.godot/imported/metal_plate_02_metal_4k.png-9f0d953e88fa6753ab7a53dc33d7b5e8.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -37,5 +36,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

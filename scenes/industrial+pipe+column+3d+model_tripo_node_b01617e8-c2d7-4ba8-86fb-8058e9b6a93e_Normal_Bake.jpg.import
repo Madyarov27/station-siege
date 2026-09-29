@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rrr5dm6v4xn2"
-path.s3tc="res://.godot/imported/industrial+pipe+column+3d+model_tripo_node_b01617e8-c2d7-4ba8-86fb-8058e9b6a93e_Normal_Bake.jpg-f4572f69a9528a13ec16efc3e819d4ba.s3tc.ctex"
+path="res://.godot/imported/industrial+pipe+column+3d+model_tripo_node_b01617e8-c2d7-4ba8-86fb-8058e9b6a93e_Normal_Bake.jpg-f4572f69a9528a13ec16efc3e819d4ba.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "755b46bd2904f11f1adf9e9d21666d3a"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://scenes/industrial+pipe+column+3d+model_tripo_node_b01617e8-c2d7-4ba8-86fb-8058e9b6a93e_Normal_Bake.jpg"
-dest_files=["res://.godot/imported/industrial+pipe+column+3d+model_tripo_node_b01617e8-c2d7-4ba8-86fb-8058e9b6a93e_Normal_Bake.jpg-f4572f69a9528a13ec16efc3e819d4ba.s3tc.ctex"]
+dest_files=["res://.godot/imported/industrial+pipe+column+3d+model_tripo_node_b01617e8-c2d7-4ba8-86fb-8058e9b6a93e_Normal_Bake.jpg-f4572f69a9528a13ec16efc3e819d4ba.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

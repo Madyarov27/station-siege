@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3deo8fv2ofl"
-path.s3tc="res://.godot/imported/crutch_and_iv_drip_0.png-aba962101f0b3197be32307c3ac63ebe.s3tc.ctex"
+path="res://.godot/imported/crutch_and_iv_drip_0.png-aba962101f0b3197be32307c3ac63ebe.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "5faed636755c45231ec53f63b152be1e"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://scenes/crutch_and_iv_drip_0.png"
-dest_files=["res://.godot/imported/crutch_and_iv_drip_0.png-aba962101f0b3197be32307c3ac63ebe.s3tc.ctex"]
+dest_files=["res://.godot/imported/crutch_and_iv_drip_0.png-aba962101f0b3197be32307c3ac63ebe.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

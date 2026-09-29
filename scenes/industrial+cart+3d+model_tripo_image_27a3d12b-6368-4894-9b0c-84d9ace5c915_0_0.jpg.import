@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cyjmrpop6odqe"
-path.s3tc="res://.godot/imported/industrial+cart+3d+model_tripo_image_27a3d12b-6368-4894-9b0c-84d9ace5c915_0_0.jpg-96090e1cb3a64d914023f22809371994.s3tc.ctex"
+path="res://.godot/imported/industrial+cart+3d+model_tripo_image_27a3d12b-6368-4894-9b0c-84d9ace5c915_0_0.jpg-96090e1cb3a64d914023f22809371994.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "24f1bce7db20423eb0d11b8194bdb9ee"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://scenes/industrial+cart+3d+model_tripo_image_27a3d12b-6368-4894-9b0c-84d9ace5c915_0_0.jpg"
-dest_files=["res://.godot/imported/industrial+cart+3d+model_tripo_image_27a3d12b-6368-4894-9b0c-84d9ace5c915_0_0.jpg-96090e1cb3a64d914023f22809371994.s3tc.ctex"]
+dest_files=["res://.godot/imported/industrial+cart+3d+model_tripo_image_27a3d12b-6368-4894-9b0c-84d9ace5c915_0_0.jpg-96090e1cb3a64d914023f22809371994.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1ipnaltxdhlq"
-path.s3tc="res://.godot/imported/tangled+wiring+harness+3d+model_tangled_wiring_harness_3d_model_metallic-tangled_wiring_harness_3d_model_roughness.png-f8ff90ac708e651985869730dc576a94.s3tc.ctex"
+path="res://.godot/imported/tangled+wiring+harness+3d+model_tangled_wiring_harness_3d_model_metallic-tangled_wiring_harness_3d_model_roughness.png-f8ff90ac708e651985869730dc576a94.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "2424de29bd17267a81bff51a0586118d"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://scenes/tangled+wiring+harness+3d+model_tangled_wiring_harness_3d_model_metallic-tangled_wiring_harness_3d_model_roughness.png"
-dest_files=["res://.godot/imported/tangled+wiring+harness+3d+model_tangled_wiring_harness_3d_model_metallic-tangled_wiring_harness_3d_model_roughness.png-f8ff90ac708e651985869730dc576a94.s3tc.ctex"]
+dest_files=["res://.godot/imported/tangled+wiring+harness+3d+model_tangled_wiring_harness_3d_model_metallic-tangled_wiring_harness_3d_model_roughness.png-f8ff90ac708e651985869730dc576a94.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

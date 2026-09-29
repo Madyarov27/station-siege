@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwbwgo3hr5nvp"
-path.s3tc="res://.godot/imported/medical_props_2.png-efd6e06dc3d7a073a40cf87e59eae235.s3tc.ctex"
+path="res://.godot/imported/medical_props_2.png-efd6e06dc3d7a073a40cf87e59eae235.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "00bcfef64131bc3c6fcb713743608f78"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://materials/medical_props_2.png"
-dest_files=["res://.godot/imported/medical_props_2.png-efd6e06dc3d7a073a40cf87e59eae235.s3tc.ctex"]
+dest_files=["res://.godot/imported/medical_props_2.png-efd6e06dc3d7a073a40cf87e59eae235.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

@@ -7,7 +7,6 @@ extends CharacterBody3D
 var health = 100
 var tracer_timer := 0.0
 var gold := 0
-var jump_velocity = 4
 var is_reloading := false
 var reload_timer := 0.0
 var shake_amount := 0.0
@@ -119,13 +118,17 @@ func _notification(what):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _unhandled_input(event):
+	if event is InputEventMouseButton and event.pressed and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+		# browsers only grant pointer lock in response to a real user gesture,
+		# so capturing in _ready() silently fails on web - grab it on the
+		# first click instead (and don't also fire/interact on that same click).
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		return
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		camera_pitch -= event.relative.y * mouse_sensitivity
 		camera_pitch = clamp(camera_pitch, -1.5, 1.5)
 		$Camera3D.rotation.x = camera_pitch
-	if Input.is_action_just_pressed("jump"):
-		velocity.y = jump_velocity
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		# fire immediately on the press itself, don't rely solely on the
 		# _process() hold-polling loop below - a fast single click could
@@ -282,7 +285,7 @@ func _update_hud_prompts(delta):
 			var dist = global_position.distance_to(b.global_position)
 			if dist < best_dist:
 				best_dist = dist
-				best_text = "Hold SHIFT to repair"
+				best_text = "Hold F to repair"
 		for n in get_tree().get_nodes_in_group("notes"):
 			var dist = global_position.distance_to(n.global_position)
 			if dist < best_dist:
@@ -388,7 +391,7 @@ func update_ammo_count():
 		
 		var weapon = weapons[current_weapon]
 		if current_weapon == "pistol":
-			label.text = "Ammo: " + str(weapon["ammo"]) + "/" + str(weapon["mag_size"]) + "(∞)"
+			label.text = "Ammo: " + str(weapon["ammo"]) + "/" + str(weapon["mag_size"])
 		else: 
 			label.text = "Ammo: " + str(weapon["ammo"]) + "/" + str(weapon["mag_size"]) + " (" + str(weapon['reserve_ammo']) + ")"
 	

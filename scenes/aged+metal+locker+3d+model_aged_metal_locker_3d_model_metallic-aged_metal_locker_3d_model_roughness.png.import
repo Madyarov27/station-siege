@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5aimyr0v5qn8"
-path.s3tc="res://.godot/imported/aged+metal+locker+3d+model_aged_metal_locker_3d_model_metallic-aged_metal_locker_3d_model_roughness.png-ff0a5a2d8ec5c8a71a05a9c21616a88d.s3tc.ctex"
+path="res://.godot/imported/aged+metal+locker+3d+model_aged_metal_locker_3d_model_metallic-aged_metal_locker_3d_model_roughness.png-ff0a5a2d8ec5c8a71a05a9c21616a88d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "9fac945ef777c096678592864b0c8b13"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://scenes/aged+metal+locker+3d+model_aged_metal_locker_3d_model_metallic-aged_metal_locker_3d_model_roughness.png"
-dest_files=["res://.godot/imported/aged+metal+locker+3d+model_aged_metal_locker_3d_model_metallic-aged_metal_locker_3d_model_roughness.png-ff0a5a2d8ec5c8a71a05a9c21616a88d.s3tc.ctex"]
+dest_files=["res://.godot/imported/aged+metal+locker+3d+model_aged_metal_locker_3d_model_metallic-aged_metal_locker_3d_model_roughness.png-ff0a5a2d8ec5c8a71a05a9c21616a88d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

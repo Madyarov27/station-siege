@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4mvktbgnko2o"
-path.s3tc="res://.godot/imported/industrial+sci-fi+panel+3d+model_tripo_image_85cd6b5f-58cd-4546-a8c2-739ae1565fa1_0_0.jpg-5017e015f15cf16c3af7dbca18cbd324.s3tc.ctex"
+path="res://.godot/imported/industrial+sci-fi+panel+3d+model_tripo_image_85cd6b5f-58cd-4546-a8c2-739ae1565fa1_0_0.jpg-5017e015f15cf16c3af7dbca18cbd324.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "5f673d578ccce9a20ecbe5015b6e34a8"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://scenes/industrial+sci-fi+panel+3d+model_tripo_image_85cd6b5f-58cd-4546-a8c2-739ae1565fa1_0_0.jpg"
-dest_files=["res://.godot/imported/industrial+sci-fi+panel+3d+model_tripo_image_85cd6b5f-58cd-4546-a8c2-739ae1565fa1_0_0.jpg-5017e015f15cf16c3af7dbca18cbd324.s3tc.ctex"]
+dest_files=["res://.godot/imported/industrial+sci-fi+panel+3d+model_tripo_image_85cd6b5f-58cd-4546-a8c2-739ae1565fa1_0_0.jpg-5017e015f15cf16c3af7dbca18cbd324.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=2048
 detect_3d/compress_to=0

@@ -13,6 +13,12 @@ var unstuck_dir := Vector3.ZERO
 var check_window_timer := 0.0
 var window_start_position := Vector3.ZERO
 var window_started := false
+const PROGRESS_WINDOW := 5.0
+const MIN_PROGRESS := 2.0
+const MAX_NO_PROGRESS_WINDOWS := 4
+var progress_timer := 0.0
+var progress_origin := Vector3.INF
+var no_progress_windows := 0
 
 
 
@@ -29,6 +35,10 @@ func _ready():
 	$GroanSound.stream = groan_sound
 	$GroanTimer.timeout.connect(_on_groan_timer)
 	start_groan_timer()
+	# small tolerance so zombies reach each corner waypoint before turning,
+	# instead of cutting corners into walls (e.g. the wall inside spawn chambers)
+	$NavigationAgent3D.path_desired_distance = 0.5
+	$NavigationAgent3D.target_desired_distance = 1.0
 	
 func start_groan_timer():
 	$GroanTimer.wait_time = randf_range(3.0, 7.0)
@@ -42,6 +52,7 @@ func _on_groan_timer():
 func _physics_process(delta):
 	var barricade = get_nearest_blocking_barricade()
 	if barricade != null:
+		_reset_progress()
 		velocity.x = 0
 		velocity.z = 0
 		play_anim("attack")
@@ -80,29 +91,20 @@ func _physics_process(delta):
 		var distance = to_player.length()
 
 		if distance > attack_range:
-			# tell the navigation agent where we want to go
-			$NavigationAgent3D.target_position = player.global_position
+			if _check_no_progress(delta):
+				return
 			
+			$NavigationAgent3D.target_position = player.global_position
+
 			var next_point = $NavigationAgent3D.get_next_path_position()
 
 			var direction = next_point - global_position
 			direction.y = 0
 
-			# NavigationAgent3D only advances to the next waypoint once within
-			# path_desired_distance (1.0). Stopping movement any time we're merely
-			# close to the current waypoint (the old > 0.1 check) creates a dead
-			# zone the agent can never walk out of, which is what caused zombies
-			# to freeze permanently at sharp turns where waypoints sit close together.
 			if direction.length() > 0.001:
 				direction = direction.normalized()
 
-				# CharacterBody3D can wedge against a wall/door-frame corner (the navmesh's
-				# agent_radius clearance isn't reliably honored right at sharp corners) and
-				# move_and_slide() cancels velocity to zero every frame even though a valid
-				# nav path exists. A per-frame displacement check misses a fast in-place
-				# ping-pong (each single frame moves plenty, but net progress is zero), so
-				# track net displacement over a 0.3s window instead, and push away along
-				# the actual wall contact normal until we're clear.
+				
 				check_window_timer += delta
 				escape_cooldown = max(0.0, escape_cooldown - delta)
 				if not window_started:
@@ -146,6 +148,7 @@ func _physics_process(delta):
 			
 		else:
 			# close enough: stop and attack
+			_reset_progress()
 			velocity.x = 0
 			velocity.z = 0
 			play_anim("attack")
@@ -209,6 +212,37 @@ func spawn_zombies():
 	play_anim("mixamo_com")
 	
 	
+func _reset_progress():
+	progress_timer = 0.0
+	progress_origin = Vector3.INF
+	no_progress_windows = 0
+
+func _check_no_progress(delta) -> bool:
+	if progress_origin == Vector3.INF:
+		progress_origin = global_position
+	progress_timer += delta
+	if progress_timer < PROGRESS_WINDOW:
+		return false
+	var moved = Vector2(global_position.x - progress_origin.x, global_position.z - progress_origin.z).length()
+	progress_timer = 0.0
+	progress_origin = global_position
+	if moved < MIN_PROGRESS and not _near_intact_barricade():
+		no_progress_windows += 1
+	else:
+		no_progress_windows = 0
+	if no_progress_windows >= MAX_NO_PROGRESS_WINDOWS:
+		print("Zombie despawned: no progress for ", PROGRESS_WINDOW * MAX_NO_PROGRESS_WINDOWS, "s at ", global_position)
+		queue_free()
+		return true
+	return false
+
+# zombies queued up behind others at a barricade aren't stuck, just waiting
+func _near_intact_barricade() -> bool:
+	for b in get_tree().get_nodes_in_group("barricades"):
+		if b.boards_up > 0 and global_position.distance_to(b.global_position) < 5.0:
+			return true
+	return false
+
 func get_nearest_blocking_barricade():
 	var player = get_tree().get_first_node_in_group("player")
 	if player == null:

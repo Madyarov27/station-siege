@@ -32,8 +32,8 @@ stream = ExtResource("4_06hqn")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="right_door" unique_id=1370900558]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1.7782834, 0, 0.4588977, 0.016695619)
-collision_layer = 512
-collision_mask = 512
+collision_layer = 32
+collision_mask = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="right_door/StaticBody3D" unique_id=285418994]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, -2.2737368e-13, 0, 1, -0.0053541847, 0.04960886, -0.0215787)
@@ -49,8 +49,8 @@ transform = Transform3D(1, 0, -6.661338e-16, 0, 1, 0, 0, 0, 1.0000001, 0.0011877
 
 [node name="StaticBody3D" type="StaticBody3D" parent="left_door" unique_id=1018861769]
 transform = Transform3D(1, 0, -1.110223e-16, 0, 1, 0, 0, 0, 1.0000001, 0, 0.43599492, 0)
-collision_layer = 512
-collision_mask = 512
+collision_layer = 32
+collision_mask = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="left_door/StaticBody3D" unique_id=872304733]
 transform = Transform3D(1, 0, -4.440892e-16, 0, 1.0000006, 0, 1.1368684e-13, 0, 1.0000001, 0.010428499, 0.06730103, -0.017755568)

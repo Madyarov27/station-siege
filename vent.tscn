@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://caw462rp6jiw6"]
-
-[ext_resource type="Script" uid="uid://dhhfrdse0eiqf" path="res://vent.gd" id="1_8novf"]
-[ext_resource type="PackedScene" uid="uid://hrqs5fvhuepo" path="res://scenes/rusty+wall+vent+3d+model (1).glb" id="2_0e68c"]
-
-[node name="vent" type="Node3D" unique_id=137252420]
-script = ExtResource("1_8novf")
-
-[node name="vent" parent="." unique_id=1059032688 instance=ExtResource("2_0e68c")]
