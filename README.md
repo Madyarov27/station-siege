@@ -2,9 +2,9 @@
 
 First-person zombie shooter set on an abandoned space station. You get 10 waves. Survive them and you win the game.
 
-![Two zombies closing in on the player in a blood-stained medical room, pistol drawn, health at 43](screenshot.png)
+![Two zombies closing in on the player in a blood-stained medical room, pistol drawn, health at 43](https://raw.githubusercontent.com/Madyarov27/station-siege/main/screenshot.png)
 
-**Play it in your browser: [madyarov27.itch.io/station-siege](https://madyarov27.itch.io/station-siege)**
+**Play it in your browser: [madyarov27.itch.io/station-siege-web](https://madyarov27.itch.io/station-siege-web)**
 
 Nothing to install. Open the link, click Start, and click inside the game window to lock the mouse. Works best in Chrome or Edge on a desktop.
 
@@ -59,5 +59,3 @@ The web build was tricky. The first export was 2.3 GB and wouldn't load in a bro
 - 3D models: Sketchfab, and a few from Tripo.
 - Character animations: Mixamo.
 - Sound effects: various free SFX libraries.
-
-<!-- TODO: double-check each asset's license allows redistribution before publishing -->
